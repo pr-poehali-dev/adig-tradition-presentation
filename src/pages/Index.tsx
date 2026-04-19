@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
 const MOUNTAINS_IMG   = "https://cdn.poehali.dev/projects/0b86dc4a-973d-4a3d-ad63-754e87fa5dd2/files/333b828a-fb3a-4d1d-bd63-3dc8f06c7e1d.jpg";
-const COSTUME_IMG     = "https://cdn.poehali.dev/projects/0b86dc4a-973d-4a3d-ad63-754e87fa5dd2/files/abf21859-dbd6-4e90-98c6-25be4a4a9710.jpg";
+const COSTUME_IMG     = "https://cdn.poehali.dev/projects/0b86dc4a-973d-4a3d-ad63-754e87fa5dd2/files/bc95a26f-9ad7-485d-9329-ea49d9fa19d2.jpg";
 const FESTIVAL_IMG    = "https://cdn.poehali.dev/projects/0b86dc4a-973d-4a3d-ad63-754e87fa5dd2/files/6726cf03-518f-473c-a3c6-5372cb00e1d9.jpg";
 const FOOD_IMG        = "https://cdn.poehali.dev/projects/0b86dc4a-973d-4a3d-ad63-754e87fa5dd2/files/30983def-86ff-48ee-905e-743478a88c60.jpg";
 const ARTIFACTS_IMG   = "https://cdn.poehali.dev/projects/0b86dc4a-973d-4a3d-ad63-754e87fa5dd2/files/4576e66c-5005-4912-9c74-65721078b307.jpg";
