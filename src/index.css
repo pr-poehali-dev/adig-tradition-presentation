@@ -4,43 +4,46 @@
 
 @layer base {
   :root {
-    --background: 25 20% 6%;
-    --foreground: 42 60% 88%;
+    --background: 150 25% 6%;
+    --foreground: 90 30% 90%;
 
-    --card: 25 18% 10%;
-    --card-foreground: 42 60% 88%;
+    --card: 150 20% 9%;
+    --card-foreground: 90 30% 90%;
 
-    --popover: 25 18% 10%;
-    --popover-foreground: 42 60% 88%;
+    --popover: 150 20% 9%;
+    --popover-foreground: 90 30% 90%;
 
-    --primary: 42 85% 55%;
-    --primary-foreground: 25 20% 6%;
+    --primary: 142 60% 42%;
+    --primary-foreground: 150 25% 6%;
 
-    --secondary: 25 15% 18%;
-    --secondary-foreground: 42 60% 88%;
+    --secondary: 150 18% 15%;
+    --secondary-foreground: 90 30% 90%;
 
-    --muted: 25 15% 15%;
-    --muted-foreground: 42 30% 60%;
+    --muted: 150 15% 13%;
+    --muted-foreground: 100 20% 55%;
 
-    --accent: 8 70% 42%;
-    --accent-foreground: 42 60% 88%;
+    --accent: 85 55% 35%;
+    --accent-foreground: 90 30% 90%;
 
     --destructive: 0 62.8% 40%;
-    --destructive-foreground: 42 60% 88%;
+    --destructive-foreground: 90 30% 90%;
 
-    --border: 42 25% 22%;
-    --input: 42 25% 22%;
-    --ring: 42 85% 55%;
+    --border: 140 20% 18%;
+    --input: 140 20% 18%;
+    --ring: 142 60% 42%;
 
     --radius: 0.25rem;
 
-    /* Custom */
-    --gold: #c9a84c;
-    --gold-light: #e8c96b;
-    --gold-dark: #8b6914;
-    --deep: #0f0a05;
-    --crimson: #8b1a1a;
-    --parchment: #f2e8d0;
+    /* Custom palette */
+    --forest: #1a3a2a;
+    --pine: #0d2418;
+    --emerald: #2e7d52;
+    --jade: #4caf7a;
+    --mist: #a8c5b0;
+    --snow: #f0f5f1;
+    --stone: #8fa898;
+    --copper: #b87333;
+    --earth: #6b4e2a;
   }
 }
 
@@ -56,41 +59,40 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Montserrat", sans-serif;
-    background-color: #0f0a05;
+    background-color: #0d2418;
   }
 }
 
-/* Ornament pattern */
-.adyghe-pattern {
+/* Subtle mountain texture overlay */
+.mountain-bg {
   background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 20px,
-      rgba(201, 168, 76, 0.04) 20px,
-      rgba(201, 168, 76, 0.04) 21px
+    radial-gradient(
+      ellipse at 20% 80%,
+      rgba(46, 125, 82, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(76, 175, 122, 0.08) 0%,
+      transparent 50%
     ),
     repeating-linear-gradient(
-      -45deg,
+      60deg,
       transparent,
-      transparent 20px,
-      rgba(201, 168, 76, 0.04) 20px,
-      rgba(201, 168, 76, 0.04) 21px
+      transparent 30px,
+      rgba(76, 175, 122, 0.02) 30px,
+      rgba(76, 175, 122, 0.02) 31px
     );
 }
 
-.gold-border {
-  border-image: linear-gradient(90deg, transparent, #c9a84c, transparent) 1;
-}
-
 .ornament-line {
-  height: 2px;
+  height: 1px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    #c9a84c 30%,
-    #e8c96b 50%,
-    #c9a84c 70%,
+    #2e7d52 30%,
+    #4caf7a 50%,
+    #2e7d52 70%,
     transparent 100%
   );
 }
@@ -102,7 +104,6 @@
     opacity 0.7s ease,
     transform 0.7s ease;
 }
-
 .section-reveal.visible {
   opacity: 1;
   transform: translateY(0);
@@ -110,14 +111,12 @@
 
 .hero-title {
   font-family: "Cormorant Garamond", serif;
-  text-shadow: 0 0 60px rgba(201, 168, 76, 0.3);
 }
 
 .nav-link {
   position: relative;
   transition: color 0.3s;
 }
-
 .nav-link::after {
   content: "";
   position: absolute;
@@ -125,10 +124,9 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: #c9a84c;
+  background: #4caf7a;
   transition: width 0.3s ease;
 }
-
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
@@ -139,23 +137,20 @@
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
-
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(201, 168, 76, 0.15);
+  box-shadow: 0 20px 60px rgba(46, 125, 82, 0.2);
 }
 
 .gallery-item {
   overflow: hidden;
   cursor: pointer;
 }
-
 .gallery-item img {
   transition: transform 0.5s ease;
 }
-
 .gallery-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 @keyframes fadeInUp {
@@ -168,7 +163,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes shimmer {
   0% {
     background-position: -200% center;
@@ -177,40 +171,52 @@
     background-position: 200% center;
   }
 }
+@keyframes floatMist {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(20px);
+  }
+}
 
 .animate-hero {
   animation: fadeInUp 1s ease forwards;
 }
-
 .animate-hero-delay {
   animation: fadeInUp 1s ease 0.3s forwards;
   opacity: 0;
 }
-
 .animate-hero-delay-2 {
   animation: fadeInUp 1s ease 0.6s forwards;
   opacity: 0;
 }
 
-.gold-shimmer {
-  background: linear-gradient(90deg, #c9a84c, #e8c96b, #c9a84c);
+.green-shimmer {
+  background: linear-gradient(90deg, #4caf7a, #a8d8b8, #4caf7a);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 3s linear infinite;
+  animation: shimmer 4s linear infinite;
+}
+
+.mist-blob {
+  animation: floatMist 8s ease-in-out infinite;
 }
 
 .sidebar-bg {
-  background: rgba(15, 10, 5, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(13, 36, 24, 0.96);
+  backdrop-filter: blur(12px);
 }
 
-/* Ethnic diamond ornament */
-.ethnic-diamond::before {
-  content: "◆";
-  color: #c9a84c;
-  margin: 0 8px;
-  font-size: 0.6em;
-  opacity: 0.7;
+/* Mountain silhouette decorative divider */
+.mountain-divider {
+  width: 100%;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpolyline points='0,60 100,20 200,45 340,5 480,35 600,0 720,30 860,8 980,38 1100,12 1200,28 1200,60' fill='rgba(46,125,82,0.15)'/%3E%3C/svg%3E")
+    center/cover no-repeat;
 }
